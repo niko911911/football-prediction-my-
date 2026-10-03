@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - USE_MOCK_DATA=true
+      - DATABASE_URL=sqlite:///./app.db
+    # 开发热更新：取消注释可将本地代码映射到容器内
+    # volumes:
+    #   - ./backend:/app/backend
